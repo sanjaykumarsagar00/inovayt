@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "userId": "3939C03F-A152-43FF-A9FC-1041ED49FA57",
+      "name": "James",
+      "title": "Mr.",
+      "surname": "Sagar",
+      "givenname": "syam",
+      "preferredname": "rakeskk",
+      "gender": "Male",
+      "maritalStatus": "Single",
+      "australianresidence": "Yes",
+      "taxFileNumber": "xyz"
+
+    },
+    {
+      "userId": "CABD8035-A987-4187-A4A0-5FAADBBFEDC6",
+      "name": "Pamela",
+      "title": "Mrs.",
+      "surname": "rohit",
+      "givenname": "3939C03F-A152-43FF-A9FC-1041ED49FA57",
+      "preferredname": "xyz",
+      "gender": "Female",
+      "maritalStatus": "Married",
+      "australianresidence": "No",
+      "taxFileNumber": "xyz"
+    }
+  ],
+  "assets": [
+    {
+      "userId": "3939C03F-A152-43FF-A9FC-1041ED49FA00",
+      "type": "Motar Vehical",
+      "name": "Jim Halpert",
+      "purchaseprice": "$455000",
+      "assetvalue": "$555000",
+      "purchasedate": "16/01/2020",
+      "description": "test data"
+    },
+    {
+      "userId": "3939C03F-A152-43FF-A9FC-1041ED49FA01",
+      "type": "Primary Residence",
+      "name": "Pam Halpert",
+      "purchaseprice": "$225000",
+      "assetvalue": "$666000",
+      "purchasedate": "12/01/2020",
+      "description": "OK"
+    },
+    {
+      "userId": "3939C03F-A152-43FF-A9FC-1041ED49FA02",
+      "type": "Investment Property",
+      "name": "Sunny Halpert",
+      "purchaseprice": "$225000",
+      "assetvalue": "$666000",
+      "purchasedate": "12/01/2020",
+      "description": "OK"
+    },
+    {
+      "userId": "3939C03F-A152-43FF-A9FC-1041ED49FA03",
+      "type": "Stocks",
+      "name": "Gabbb",
+      "purchaseprice": "$225000",
+      "assetvalue": "$666000",
+      "purchasedate": "12/01/2020",
+      "description": "OK"
+    }
+  ]
+}

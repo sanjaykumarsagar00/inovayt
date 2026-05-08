@@ -1,0 +1,69 @@
+﻿@model List<inovayt.Models.VMUser>
+<div>
+    <div class="col" style="font-size: 25px; color: #212529; text-shadow: 2px 4px 3px #b0afb275; background-color: #b0afb275; text-align: center; width: 100%;">Personal Details</div>
+</div>
+<div class="row">
+    
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="col-md-6">
+            <input type="hidden" asp-for="@Model[i].userId" />
+
+            <div class="form-group">
+                <strong style="font-size:1.5em;">@Model[i].Name</strong>
+            </div>
+            <hr />
+
+            <div class="form-group">
+                <strong>Title</strong>
+                <select id="ddlTitle" class="form-control" asp-for="@Model[i].Title" asp-items="@(new SelectList(@Model[i].titleList, "Value", "Text"))">
+                    <option value="">Select Title</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <strong>Surname</strong>
+                <input asp-for="@Model[i].Surname" class="form-control" />
+                <span asp-validation-for="@Model[i].Surname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <strong>Given name(s)</strong>
+                <input asp-for="@Model[i].Givenname" class="form-control" />
+                <span asp-validation-for="@Model[i].Givenname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <strong>Preferred Name</strong>
+                <input asp-for="@Model[i].Preferredname" class="form-control" />
+                <span asp-validation-for="@Model[i].Preferredname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <strong>Gender</strong><br>
+                @Html.RadioButton(@Model[i].Gender,"Male",isChecked:@Model[i].Gender == "Male" ? true : false) Male
+                @Html.RadioButton(@Model[i].Gender, "Female",isChecked:@Model[i].Gender == "Female" ? true : false) Female
+            </div>
+
+            <div class="form-group">
+                <strong>Marital Status</strong>
+                <select id="ddlMarital" class="form-control" asp-for="@Model[i].MaritalStatus" asp-items="@(new SelectList(@Model[i].maritalList, "Value", "Text"))">
+                    <option value="">Select Marital Status</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <strong>Australian Residence</strong><br>
+                @Html.RadioButton(@Model[i].Australianresidence,"Yes",isChecked:@Model[i].Australianresidence == "Yes" ? true : false) Yes
+                @Html.RadioButton(@Model[i].Australianresidence, "No",isChecked:@Model[i].Australianresidence == "No" ? true : false) No
+            </div>
+
+            <div class="form-group">
+                <strong>Tax File Number(TFN)</strong>
+                <input asp-for="@Model[i].TaxFileNumber" class="form-control" />
+                <span asp-validation-for="@Model[i].TaxFileNumber" class="text-danger"></span>
+            </div>
+        </div>
+    }
+
+</div>

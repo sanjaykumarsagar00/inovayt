@@ -1,0 +1,115 @@
+﻿
+<div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalTitle">Edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form class="needs-validation" novalidate>
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="has-float-label">
+                                        <label>Purchase Date</label>
+                                        <input type="date" id="purchaseDate" class="form-control" required>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="validationDefaultUsername" class="form-label">Purchase Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroupPrepend2">$</span>
+                                    <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                                </div>
+                            </div>
+
+                               <div class="col-md-4">
+                                <label for="validationDefaultUsername" class="form-label">Asset Value</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroupPrepend2">$</span>
+                                    <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" id="Description" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Owner</label>
+                                    <select id="selection" class="form-control">
+                                        <option>Choose..</option>
+                                        <option>Ramesh</option>
+                                        <option>Sumesh</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select id="selection" class="form-control">
+                                        <option>Choose..</option>
+                                        <option>Type 1</option>
+                                        <option>Type 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-bs-dismiss="modal" type="button" style="border-color:red;">
+                            Delete
+                        </button>
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+                            Close
+                        </button>
+                        <button data-bs-dismiss="modal" id="btnAdd" class="btn btn-success" type="button">
+                            Save changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+   
+    (function () {
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>

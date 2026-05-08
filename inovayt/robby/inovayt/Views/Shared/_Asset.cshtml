@@ -1,0 +1,108 @@
+﻿@model List<inovayt.Models.Asset>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="~/js/custome/table.js"></script>
+<div class="card">
+    <div class="card-header">
+        Asset
+    </div>
+    <div class="card-body">
+            <div class="table-responsive">
+
+                <table class="table table-striped" style="border: 2px solid #8b7f7f57;">
+                    @foreach (var item in Model)
+                    {
+                        <thead>
+                            <tr>
+                                <th width="20%">
+                                    <p>@Html.DisplayFor(modelItem => item.Type)</p>
+                                </th>
+
+                                <th width="20%">
+                                </th>
+
+                                <th width="20%">
+                                    <div class="text-success" style="border-radius:18px;font-size:12px;float: right;border-color:red;background-color:#89aae5ab;width:160px;height:33px;text-align: center;"><label style="margin-top: 8px;">@Html.DisplayFor(modelItem => item.Name)</label></div>
+                                </th>
+
+                                <th width="20%">
+                                    <p style="float: right;"> <i class="fa fa-edit float-right" id="btnEditModal" data-toggle="modal" data-target="#addProductModal" style="font-size:15px;color:black;margin-top: 8px;margin-right: 30px;"></i></p>
+                                </th>
+
+                                <th width="20%">
+                                    <p style="float: right;"> <i data-id="@Html.DisplayFor(modelItem => item.userId)" class="fas fa-angle-down float-right table-link-asset" style="font-size:15px;color:black;margin-top: 8px;margin-right: 30px;"></i></p>
+                                </th>
+
+                            </tr>
+
+                            <tr class="@Html.DisplayFor(modelItem => item.userId) asset-class">
+                                <th width="20%">
+                                    @Html.DisplayName("Type")
+                                </th>
+                                <th width="20%">
+
+                                    @Html.DisplayName("Purchase Price")
+                                </th>
+                                <th width="20%">
+
+                                    @Html.DisplayName("Asset Value")
+                                </th>
+                                <th width="20%">
+
+                                    @Html.DisplayName("Purchase Date")
+                                </th>
+                                <th width="20%">
+                                    @Html.DisplayName("Description")
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="@Html.DisplayFor(modelItem => item.userId) asset-class">
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PurchasePrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AssetValue)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PurchaseDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+
+                    <tr>
+                        <th width="20%">
+
+                        </th>
+                        <th width="20%">
+
+
+                        </th>
+                        <th width="20%">
+
+
+                        </th>
+                        <th width="20%">
+
+
+                        </th>
+                        <th width="20%">
+                            <a style="background-color:#7e7a7a;width:90px;" class="btn btn-primary float-right">
+                                <i class="fa fa-plus"></i> Add
+                            </a>
+                        </th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+</div>
+<partial name="~/Views/Users/_edit.cshtml" />
+
